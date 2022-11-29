@@ -7,17 +7,19 @@ src = main.c map.c utils.c map_track.c init_utils.c helper.c animate.c ./utils_f
 		./utils_functions/ft_converter_base_hex.c ./utils_functions/ft_put_unsigned.c ./utils_functions/print_hex.c \
 		./utils_functions/print_ptr_adress.c ./utils_functions/get_next_line_utils.c ./utils_functions/get_next_line.c
 
-NAME = SO_LONG
+NAME = so_long.out
 
 OBJFILES = $(src:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJFILES)
-	cc $(OBJFILES) -lmlx -framework OpenGl -framework Appkit -o so_long.out
-
-run : $(NAME)
-	./so_long.out map/level2.ber
+	cc $(OBJFILES) -lmlx -framework OpenGl -framework Appkit -o $(NAME)
 
 clean:
 	rm -rf $(OBJFILES)
+
+fclean: $(clean)
+	rm -rf $(NAME)
+
+re: $(fclean) $(NAME)
