@@ -37,7 +37,7 @@ void	draw_block(t_map *map, char block, int x, int y)
 		draw_element(map, map->block->enemy_block_1, x, y);
 	else if (block == 'P')
 		draw_element(map, map->block->hero_block_1, x, y);
-	else if(block != '\n')
+	else if (block != '\n')
 		exite(map, "Map is not valid ");
 }
 

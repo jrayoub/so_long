@@ -17,7 +17,7 @@ $(NAME): $(OBJFILES)
 	cc $(OBJFILES) -lmlx -framework OpenGl -framework Appkit -o so_long.out
 
 run : $(NAME)
-	./so_long.out map/level0.ber
+	./so_long.out map/level2.ber
 
 clean:
 	rm -rf $(OBJFILES)

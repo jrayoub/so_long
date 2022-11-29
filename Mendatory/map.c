@@ -93,7 +93,6 @@ void	draw_map(t_map *map, char *level)
 		map->map_l[y] = get_next_line(fd);
 		draw_line(map->map_l[y], map, y);
 	}
-	draw_line(map->map_l[y - 1], map, y);
 	close(fd);
 	map->map_l[y] = 0;
 	check_map(map);

@@ -39,7 +39,7 @@ void	init_map(t_map *map, int width, int i, void *mlx)
 	map->mlx = mlx;
 	map->h = (i) * BLOCK_SIZE;
 	map->w = width;
-	map->mlx_win = mlx_new_window(mlx, width, map->h, "SO_LONG");
+	map->mlx_win = mlx_new_window(mlx, width, map->h - BLOCK_SIZE, "SO_LONG");
 	map->map_l = malloc(i * sizeof(char *));
 	map->is_game_over = 0;
 	map->cords = new_cords(0, 0);

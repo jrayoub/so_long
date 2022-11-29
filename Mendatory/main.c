@@ -49,7 +49,7 @@ int	key_hook(int keycode, t_map *map)
 			(map->cords->y * BLOCK_SIZE));
 		if (map->map_l[map->cords->y][map->cords->x] == 'C')
 			set_eaten_c(map);
-		refresh_out_put(map);
+		ft_printf("Moves %d \n", map->game->hero_moves);
 	}
 	return (0);
 }
@@ -77,6 +77,5 @@ int	main(int ac, char **av)
 	mlx_key_hook(map->mlx_win, key_hook, map);
 	mlx_loop_hook(map->mlx, animate, map);
 	mlx_hook(map->mlx_win, 17, 0l, end_program, map);
-	refresh_out_put(map);
 	mlx_loop(mlx);
 }

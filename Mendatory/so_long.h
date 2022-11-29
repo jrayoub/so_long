@@ -88,7 +88,6 @@ t_coordinations	*new_cords(int x, int y);
 int				obj_on_map_chr(const char *s, int c);
 void			end_game(t_map *map, char *msg);
 void			set_eaten_c(t_map *map);
-void			refresh_out_put(t_map *map);
 void			render_hero(t_map *map, int sec_counter);
 t_valide_path	*is_valide_path(int x, int y, char **map_l,
 					t_valide_path *valide_path);
