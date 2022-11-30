@@ -68,7 +68,7 @@ char	**map_l_cpy(t_map *map)
 	n_map = malloc((((map->h - BLOCK_SIZE) / BLOCK_SIZE) + 1) * sizeof(void *));
 	while (map->map_l[i])
 	{
-		n_map[i] = malloc(strlen(map->map_l[i]) + 1);
+		n_map[i] = malloc(ft_strlen(map->map_l[i]) + 1);
 		j = 0;
 		while (map->map_l[i][j])
 		{

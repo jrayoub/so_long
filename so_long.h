@@ -14,10 +14,8 @@
 # define SO_LONG_H
 
 # include <stdlib.h>
-# include <stdio.h>
 # include <mlx.h>
 # include <limits.h>
-# include <string.h>
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdint.h>
