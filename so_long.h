@@ -143,5 +143,5 @@ void			navigate_hero(t_map *map, int keycode);
 char			**map_l_cpy(t_map *map);
 void			invalide_fd(int fd);
 void			init_blocks(t_map *map);
-
+int				end_program(t_map *game);
 #endif

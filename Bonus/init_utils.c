@@ -44,6 +44,7 @@ void	init_map(t_map *map, int width, int i, void *mlx)
 	map->map_l = malloc(i * sizeof(char *));
 	map->is_game_over = 0;
 	map->cords = new_cords(0, 0);
+	init_blocks(map);
 }
 
 void	init_blocks(t_map *map)
@@ -97,9 +98,7 @@ t_map	*init_window(void *mlx, char *level)
 		line = get_next_line(fd);
 		i++;
 	}
-	free(line);
 	close(fd);
 	init_map(map, width, i, mlx);
-	init_blocks(map);
 	return (map);
 }

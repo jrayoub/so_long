@@ -45,7 +45,7 @@ int	check_path(t_map *map, int x, int y)
 int	key_hook(int keycode, t_map *map)
 {
 	if (keycode == ESC)
-		exite(map, "ESC Clicked");
+		end_program(map);
 	if (map->is_game_over)
 		return (0);
 	mlx_put_image_to_window(map->mlx, map->mlx_win, map->block->grass_block,
