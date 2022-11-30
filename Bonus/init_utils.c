@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 t_coordinations	*new_cords(int x, int y)
 {
@@ -86,6 +86,7 @@ t_map	*init_window(void *mlx, char *level)
 	map = malloc(sizeof(t_map));
 	map->game = init_game_satate();
 	fd = open(level, O_RDONLY);
+	invalide_fd(fd);
 	line = get_next_line(fd);
 	width = (ft_strlen(line) - 1) * BLOCK_SIZE;
 	while (line != NULL)

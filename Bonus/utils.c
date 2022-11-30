@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./so_long.h"
+#include "../so_long.h"
 
 int	obj_on_map_chr(const char *s, int c)
 {

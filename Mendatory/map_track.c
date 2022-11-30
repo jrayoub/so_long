@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 t_valide_path	*is_valide_path(int x, int y, char **map_l,
 	t_valide_path *valide_path)
@@ -40,9 +40,9 @@ t_valide_path	*is_valide_path(int x, int y, char **map_l,
 
 int	check_walls(t_map *map)
 {
-	int	not_valide;
-	int	i;
-	int	j;
+	int		not_valide;
+	int		i;
+	size_t	j;
 
 	not_valide = 0;
 	i = 0;
@@ -108,6 +108,7 @@ int	check_map_formate(t_map *map)
 	int	not_valide;
 	int	i;
 
+	i = 0;
 	while (map->map_l[i + 1])
 	{
 		strip_nl(map->map_l[i]);

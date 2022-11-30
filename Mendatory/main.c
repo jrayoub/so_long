@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./so_long.h"
+#include "../so_long.h"
 
 void	end_game(t_map *map, char *msg)
 {
@@ -22,8 +22,6 @@ void	end_game(t_map *map, char *msg)
 
 int	check_path(t_map *map, int x, int y)
 {
-	t_coordinations	*cords;
-
 	if (map->map_l[y][x] == 'E'
 			&& map->game->eaten_c == map->game->availables_c)
 		end_game(map, "YOU WON CONGRATULATIONS!");
@@ -45,7 +43,7 @@ int	key_hook(int keycode, t_map *map)
 	if (!map->is_game_over)
 	{
 		mlx_put_image_to_window(map->mlx, map->mlx_win,
-			map->block->hero_block, (map->cords->x * BLOCK_SIZE),
+			map->block->hero_block_1, (map->cords->x * BLOCK_SIZE),
 			(map->cords->y * BLOCK_SIZE));
 		if (map->map_l[map->cords->y][map->cords->x] == 'C')
 			set_eaten_c(map);

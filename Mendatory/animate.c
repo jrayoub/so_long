@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	render_hero(t_map *map, int sec_counter)
 {
@@ -20,11 +20,11 @@ void	render_hero(t_map *map, int sec_counter)
 			(map->cords->y * BLOCK_SIZE));
 	if (sec_counter == 2550)
 		mlx_put_image_to_window(map->mlx, map->mlx_win,
-			map->block->hero_block, (map->cords->x * BLOCK_SIZE),
+			map->block->hero_block_1, (map->cords->x * BLOCK_SIZE),
 			(map->cords->y * BLOCK_SIZE));
 	else if (sec_counter % 5500 == 0)
 		mlx_put_image_to_window(map->mlx, map->mlx_win,
-			map->block->hero_block, (map->cords->x * BLOCK_SIZE),
+			map->block->hero_block_1, (map->cords->x * BLOCK_SIZE),
 			(map->cords->y * BLOCK_SIZE));
 }
 

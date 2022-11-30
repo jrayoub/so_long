@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"so_long.h"
+#include"../so_long.h"
 
 void	free_map(char **map)
 {
@@ -53,7 +53,7 @@ void	navigate_hero(t_map *map, int keycode)
 void	exite(t_map *map, char *msg)
 {
 	mlx_destroy_window(map->mlx, map->mlx_win);
-	ft_printf("Error : %s", msg);
+	ft_printf("Error : %s\n", msg);
 	exit(0);
 }
 
@@ -80,4 +80,13 @@ char	**map_l_cpy(t_map *map)
 	}
 	n_map[i] = 0;
 	return (n_map);
+}
+
+void	invalide_fd(int fd)
+{
+	if (fd < 0)
+	{
+		ft_printf("map path is incorrect please try again with valide path");
+		exit(0);
+	}
 }

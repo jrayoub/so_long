@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./so_long.h"
+#include "../so_long.h"
 
 void	draw_element(t_map *map, void *block, int x, int y)
 {
@@ -34,7 +34,7 @@ void	draw_block(t_map *map, char block, int x, int y)
 	else if (block == 'C')
 		draw_element(map, map->block->foor_block, x, y);
 	else if (block == 'P')
-		draw_element(map, map->block->hero_block, x, y);
+		draw_element(map, map->block->hero_block_1, x, y);
 	else if (block != '\n')
 		exite(map, "Error Element Doesn't Exits");
 }
@@ -85,6 +85,7 @@ void	draw_map(t_map *map, char *level)
 
 	y = 0;
 	fd = open(level, O_RDONLY);
+	invalide_fd(fd);
 	map->map_l[y] = get_next_line(fd);
 	draw_line(map->map_l[y], map, 0);
 	while (map->map_l[y] != NULL)

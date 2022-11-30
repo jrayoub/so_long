@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 t_coordinations	*new_cords(int x, int y)
 {
@@ -50,8 +50,8 @@ void	init_blocks(t_map *map)
 	int	h;
 	int	w;
 
-	h = map->h;
-	w = map->w;
+	h = 0;
+	w = 0;
 	map->block = malloc(sizeof(t_blockes));
 	map->block->brick_block = mlx_xpm_file_to_image(map->mlx,
 			"./textures/blocks/brick.xpm", &h, &w);
@@ -61,7 +61,7 @@ void	init_blocks(t_map *map)
 			"./textures/blocks/door.xpm", &h, &w);
 	map->block->foor_block = mlx_xpm_file_to_image(map->mlx,
 			"./textures/blocks/food.xpm", &h, &w);
-	map->block->hero_block = mlx_xpm_file_to_image(map->mlx,
+	map->block->hero_block_1 = mlx_xpm_file_to_image(map->mlx,
 			"./textures/characters/hero/__1.xpm", &h, &w);
 }
 
@@ -77,6 +77,7 @@ t_map	*init_window(void *mlx, char *level)
 	map = malloc(sizeof(t_map));
 	map->game = init_game_satate();
 	fd = open(level, O_RDONLY);
+	invalide_fd(fd);
 	line = get_next_line(fd);
 	width = (ft_strlen(line) - 1) * BLOCK_SIZE;
 	while (line != NULL)

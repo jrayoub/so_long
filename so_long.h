@@ -40,7 +40,11 @@ typedef struct blockes
 	void	*grass_block;
 	void	*door_block;
 	void	*foor_block;
-	void	*hero_block;
+	void	*hero_block_1;
+	void	*hero_block_2;
+	void	*enemy_block_1;
+	void	*enemy_block_2;
+	void	*enemy_block_3;
 }	t_blockes;
 
 typedef struct coordinations
@@ -55,6 +59,7 @@ typedef struct game_state
 	int				eaten_c;
 	int				availables_c;
 	int				hero_moves;
+	struct s_list	*enemies_pos;
 }	t_game_satate;
 
 typedef struct map
@@ -86,9 +91,18 @@ void			draw_map(t_map *map, char *level);
 t_map			*init_window(void *mlx, char *level);
 t_coordinations	*new_cords(int x, int y);
 int				obj_on_map_chr(const char *s, int c);
+void			enemies_pos(const char *s, t_map *map, int y);
+int				check_enemy_path(t_map *map, int x, int y);
+void			remove_enemy(t_map *map, t_coordinations *cords);
+void			render_enemy(t_map *map, int sec_counter,
+					t_coordinations *enemy_cords);
+void			move_enemies(t_map *map, int sec_counter);
+void			move_enemy(t_map *map, t_coordinations *cords);
 void			end_game(t_map *map, char *msg);
 void			set_eaten_c(t_map *map);
+void			refresh_out_put(t_map *map);
 void			render_hero(t_map *map, int sec_counter);
+int				animate(t_map *map);
 t_valide_path	*is_valide_path(int x, int y, char **map_l,
 					t_valide_path *valide_path);
 t_game_satate	*init_game_satate(void);
@@ -127,6 +141,7 @@ int				check_path(t_map *map, int x, int y);
 int				check_map_formate(t_map *map);
 void			navigate_hero(t_map *map, int keycode);
 char			**map_l_cpy(t_map *map);
-void			strip_nl(char *line);
-int				animate(t_map *map);
+void			invalide_fd(int fd);
+void			init_blocks(t_map *map);
+
 #endif

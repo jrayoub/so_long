@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./so_long.h"
+#include "../so_long.h"
 
 void	end_game(t_map *map, char *msg)
 {
