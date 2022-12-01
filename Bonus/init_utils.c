@@ -45,6 +45,8 @@ void	init_map(t_map *map, int width, int i, void *mlx)
 	map->is_game_over = 0;
 	map->cords = new_cords(0, 0);
 	init_blocks(map);
+	if (width < 0)
+		exit(0);
 }
 
 void	init_blocks(t_map *map)
