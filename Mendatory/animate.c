@@ -14,15 +14,15 @@
 
 void	render_hero(t_map *map, int sec_counter)
 {
-	if (sec_counter == 2550 || sec_counter == 5500)
+	if (sec_counter == (TIME_UNIT / 2) || sec_counter == TIME_UNIT)
 		mlx_put_image_to_window(map->mlx, map->mlx_win,
 			map->block->grass_block, (map->cords->x * BLOCK_SIZE),
 			(map->cords->y * BLOCK_SIZE));
-	if (sec_counter == 2550)
+	if (sec_counter == (TIME_UNIT / 2))
 		mlx_put_image_to_window(map->mlx, map->mlx_win,
 			map->block->hero_block_1, (map->cords->x * BLOCK_SIZE),
 			(map->cords->y * BLOCK_SIZE));
-	else if (sec_counter % 5500 == 0)
+	else if (sec_counter % TIME_UNIT == 0)
 		mlx_put_image_to_window(map->mlx, map->mlx_win,
 			map->block->hero_block_1, (map->cords->x * BLOCK_SIZE),
 			(map->cords->y * BLOCK_SIZE));
@@ -35,7 +35,7 @@ int	animate(t_map *map)
 
 	if (map->is_game_over)
 	{
-		if (delay == 5500)
+		if (delay == TIME_UNIT)
 		{
 			mlx_destroy_window(map->mlx, map->mlx_win);
 			exit(0);

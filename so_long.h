@@ -28,9 +28,12 @@
 # define RIGHT 2
 # define ESC 53
 
+# define TIME_UNIT 5500
+
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
 # endif
+typedef enum paly_mode{REPEAT, ONCE} t_paly_mode;
 
 typedef struct blockes
 {
@@ -142,4 +145,8 @@ char			**map_l_cpy(t_map *map);
 void			invalide_fd(int fd);
 void			init_blocks(t_map *map);
 int				end_program(t_map *game);
+void			audio(t_map *map, char* audio_file,  t_paly_mode mode);
+int				kill_player();
+void			in_progress(char *audio_file);
+
 #endif

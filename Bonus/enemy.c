@@ -12,6 +12,8 @@
 
 #include "../so_long.h"
 
+
+
 void	move_enemy(t_map *map, t_coordinations *cords)
 {
 	remove_enemy(map, cords);

@@ -54,6 +54,7 @@ void	exite(t_map *map, char *msg)
 {
 	mlx_destroy_window(map->mlx, map->mlx_win);
 	ft_printf("Error : %s\n", msg);
+	kill_player();
 	exit(0);
 }
 

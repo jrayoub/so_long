@@ -4,7 +4,7 @@ Utils = ./utils_functions/ft_putchar_fd.c ./utils_functions/ft_atoi.c \
 		./utils_functions/ft_lstnew.c ./utils_functions/get_next_line_utils.c ./utils_functions/get_next_line.c \
 		./utils_functions/ft_printf.c ./utils_functions/ft_calc_num_base_size.c \
 		./utils_functions/ft_converter_base_hex.c ./utils_functions/ft_put_unsigned.c ./utils_functions/print_hex.c \
-		./utils_functions/print_ptr_adress.c 
+		./utils_functions/print_ptr_adress.c ./utils_functions/play_audio.c
 
 src = Mendatory/main.c Mendatory/map.c Mendatory/utils.c Mendatory/map_track.c Mendatory/init_utils.c Mendatory/helper.c Mendatory/animate.c
 

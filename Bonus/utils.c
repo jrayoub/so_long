@@ -30,10 +30,14 @@ int	obj_on_map_chr(const char *s, int c)
 
 int	check_enemy_path(t_map *map, int x, int y)
 {
-	if ((map->map_l[y][x] == '0' || map->map_l[y][x] == 'C'
-		|| map->map_l[y][x] == 'P' || map->map_l[y][x] == 'N'))
+	char current_char = map->map_l[y][x];
+	if(current_char  != '1' && current_char != 'N' && current_char != 'E')
 		return (1);
 	return (0);
+	// if ((map->map_l[y][x] == '0' || map->map_l[y][x] == 'C'
+	// 	|| map->map_l[y][x] == 'P' || map->map_l[y][x] == 'N'))
+	// 	return (1);
+	// return (0);
 }
 
 void	set_eaten_c(t_map *map)
