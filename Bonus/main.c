@@ -11,12 +11,12 @@
 /* ************************************************************************** */
 
 #include "../so_long.h"
+#include<stdio.h>
 
 void	end_game(t_map *map, char *msg)
 {
 	if(fork() == 0)
 		system("killall -STOP afplay && afplay ./audio/game_over.wav");
-	wait(NULL);
 	mlx_clear_window(map->mlx, map->mlx_win);
 	mlx_string_put(map->mlx, map->mlx_win,
 		(map->w / 2), (map->h / 2), 0xffffff, msg);
